@@ -16,9 +16,10 @@ jobs:
 
       - name: Build with Gradle
         run: sh gradlew build
+        working-directory: './swing-speed-template-26.3'
 
       - name: Upload Finished Mod JAR
         uses: actions/upload-artifact@v4
         with:
           name: swingspeed-26.3-jar
-          path: build/libs/*.jar
+          path: '**/build/libs/*.jar'
