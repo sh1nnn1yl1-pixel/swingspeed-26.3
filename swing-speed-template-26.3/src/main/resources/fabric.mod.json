@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "swingspeed",
+  "version": "1.0.0",
+  "name": "Swing Speed 26.3",
+  "description": "Custom hand swing speed calculations rebuilt explicitly for version 26.3.",
+  "authors": ["Custom"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.swingspeed.SwingSpeedMod"
+    ]
+  },
+  "mixins": [
+    "swingspeed.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "minecraft": "~26.3.0",
+    "java": ">=25"
+  }
+}
