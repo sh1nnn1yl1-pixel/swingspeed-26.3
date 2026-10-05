@@ -14,18 +14,8 @@ jobs:
           distribution: 'temurin'
           java-version: '25'
 
-      - name: Cache Gradle Packages
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
-
-      - name: Download Minecraft Environment
-        run: sh gradlew downloadAssets --no-daemon
+      - name: Setup Loom Dependencies
+        run: sh gradlew dependencies --no-daemon
         working-directory: './swing-speed-template-26.3'
         continue-on-error: true
 
